@@ -21,3 +21,7 @@ node_modules/
 
 # Archivos estáticos generados
 staticfiles/
+# Ignorar archivos compilados de Python
+*.pyc
+__pycache__/
+
