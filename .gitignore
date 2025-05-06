@@ -1,0 +1,23 @@
+# Entorno virtual
+env/
+venv/
+
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+
+# Archivos del sistema
+.DS_Store
+*.swp
+
+# Archivos de base de datos
+*.sqlite3
+
+# Configuración personal
+*.env
+
+# Node modules (si usaste npm para Bootstrap o Tailwind)
+node_modules/
+
+# Archivos estáticos generados
+staticfiles/
