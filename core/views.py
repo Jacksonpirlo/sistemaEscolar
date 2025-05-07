@@ -4,3 +4,10 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'index.html')
+
+#def contacto(request):
+#    return render(request, 'miapp/contacto.html')
+
+#def productos(request):
+#    return render(request, 'miapp/productos.html')
+
