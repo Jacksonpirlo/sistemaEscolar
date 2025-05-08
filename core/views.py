@@ -16,7 +16,7 @@ def registro_usuario(request):
 # Create your views here.
 
 def home(request):
-    return render(request, 'registro.html')
+    return render(request, 'index.html')
 
 #def contacto(request):
 #    return render(request, 'miapp/contacto.html')
