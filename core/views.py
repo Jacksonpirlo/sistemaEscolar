@@ -1,9 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import RegistroUsuarioForm
+
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('inicio')
+    else:
+        form = RegistroUsuarioForm()
+    return render(request, 'registro.html', {'form': form})
+
+#from django.shortcuts import render
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'registro.html')
 
 #def contacto(request):
 #    return render(request, 'miapp/contacto.html')
