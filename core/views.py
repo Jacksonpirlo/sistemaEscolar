@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import RegistroUsuarioForm
 
+def login(request):
+    return render(request, 'login.html')
+
+
 def registro_usuario(request):
     if request.method == 'POST':
         form = RegistroUsuarioForm(request.POST)
@@ -9,7 +13,7 @@ def registro_usuario(request):
             return redirect('inicio')
     else:
         form = RegistroUsuarioForm()
-    return render(request, 'registro.html', {'form': form})
+    return render(request, 'registro.html', )
 
 #from django.shortcuts import render
 
@@ -17,10 +21,4 @@ def registro_usuario(request):
 
 def home(request):
     return render(request, 'index.html')
-
-#def contacto(request):
-#    return render(request, 'miapp/contacto.html')
-
-#def productos(request):
-#    return render(request, 'miapp/productos.html')
 
