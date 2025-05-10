@@ -13,7 +13,9 @@ def registro_usuario(request):
             return redirect('inicio')
     else:
         form = RegistroUsuarioForm()
-    return render(request, 'registro.html', )
+
+    # Aquí está el arreglo
+    return render(request, 'registro.html', {'form': form})
 
 #from django.shortcuts import render
 
@@ -21,4 +23,6 @@ def registro_usuario(request):
 
 def home(request):
     return render(request, 'index.html')
+
+
 

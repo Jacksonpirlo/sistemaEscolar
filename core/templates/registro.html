@@ -3,20 +3,24 @@
 <html>
 <head>
   <title>Registro de Usuario</title>
-  <link href="{% static 'css/registro.css' %}" rel="stylesheet">
+  <link href="static ../../../static/css/registro.css" rel="stylesheet">
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-10">
-  {% include "partials/navbar.html" %}
-  <div class="max-w-lg mx-auto bg-white p-6 rounded shadow">
-    <h1 class="text-2xl mb-4 font-bold">Registro de Usuario</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Registrar</button>
+<body class="">
+  <div class="form-container">
+    <h1 class="">Registro de Usuario</h1>
+    <form method="post" class="form">
+      <div class="text-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+      </div>
+      <button class="btn btn-primary" type="submit">Registrar</button>
+
     </form>
   </div>
   {% include "partials/footer.html" %}
-</body>
-</html>
 </body>
 </html>
