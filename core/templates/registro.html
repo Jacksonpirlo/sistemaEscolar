@@ -1,0 +1,61 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Usuario</title>
+  <link href="{% static 'css/tailwind.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/registro.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:opsz,wght@6..12,400&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex items-center justify-center form-container">
+
+  <div class="form">
+    <h1 class="text-2xl font-bold text-white mb-4">Registro de Usuario</h1>
+
+    {% if messages %}
+      <div class="mb-4">
+        {% for message in messages %}
+          <p class="text-sm {% if message.tags == 'error' %}text-red-400{% else %}text-green-300{% endif %}">
+            {{ message }}
+          </p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" class="w-full text-form">
+      {% csrf_token %}
+
+      <p>
+        <label for="{{ form.correo.id_for_label }}">Correo Electrónico:</label>
+        {{ form.correo|add_class:"w-full p-2 border rounded bg-white bg-opacity-30 text-black" }}
+      </p>
+
+      <p>
+        <label for="{{ form.rol.id_for_label }}">Rol:</label>
+        {{ form.rol|add_class:"w-full p-2 border rounded bg-white bg-opacity-30 text-black" }}
+      </p>
+
+      <p>
+        <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+        {{ form.password|add_class:"w-full p-2 border rounded bg-white bg-opacity-30 text-black" }}
+        <span class="text-xs text-white">{{ form.password.help_text }}</span>
+      </p>
+
+      <p>
+        <label for="{{ form.confirmar_password.id_for_label }}">Confirmar Contraseña:</label>
+        {{ form.confirmar_password|add_class:"w-full p-2 border rounded bg-white bg-opacity-30 text-black" }}
+      </p>
+
+      <button type="submit" class="btn w-full">Registrarse</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Panel del Coordinador Académico{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold text-blue-700 mb-6 text-center">Panel del Coordinador Académico</h2>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <a href="{% url 'lista_niveles' %}" class="bg-white p-4 rounded-lg shadow border hover:shadow-lg transition">
+    <h3 class="text-blue-600 font-semibold text-lg mb-1">📚 Niveles Educativos</h3>
+    <p class="text-gray-500 text-sm">Ver y gestionar los niveles educativos.</p>
+  </a>
+
+  <a href="{% url 'lista_grados' %}" class="bg-white p-4 rounded-lg shadow border hover:shadow-lg transition">
+    <h3 class="text-blue-600 font-semibold text-lg mb-1">🎓 Grados</h3>
+    <p class="text-gray-500 text-sm">Gestionar los grados por nivel.</p>
+  </a>
+
+  <a href="{% url 'lista_areas' %}" class="bg-white p-4 rounded-lg shadow border hover:shadow-lg transition">
+    <h3 class="text-blue-600 font-semibold text-lg mb-1">🧠 Áreas</h3>
+    <p class="text-gray-500 text-sm">Registrar y organizar áreas académicas.</p>
+  </a>
+
+  <a href="{% url 'lista_asignaturas' %}" class="bg-white p-4 rounded-lg shadow border hover:shadow-lg transition">
+    <h3 class="text-blue-600 font-semibold text-lg mb-1">📘 Asignaturas</h3>
+    <p class="text-gray-500 text-sm">Definir asignaturas para cada grado y área.</p>
+  </a>
+
+  <a href="{% url 'lista_temas' %}" class="bg-white p-4 rounded-lg shadow border hover:shadow-lg transition">
+    <h3 class="text-blue-600 font-semibold text-lg mb-1">🛠️ Temas</h3>
+    <p class="text-gray-500 text-sm">Contenido temático por asignatura.</p>
+  </a>
+
+  <a href="{% url 'lista_logros' %}" class="bg-white p-4 rounded-lg shadow border hover:shadow-lg transition">
+    <h3 class="text-blue-600 font-semibold text-lg mb-1">🏅 Logros</h3>
+    <p class="text-gray-500 text-sm">Registrar logros esperados por asignatura.</p>
+  </a>
+</div>
+{% endblock %}

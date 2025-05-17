@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="text-xl font-bold mb-4">{{ form.instance.id|default:"Nuevo" }} Tema</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="bg-green-500 text-white py-1 px-3 rounded">Guardar</button>
+  </form>
+  <a href="{% url 'lista_temas' %}" class="mt-4 inline-block">Volver a la lista</a>
+{% endblock %}

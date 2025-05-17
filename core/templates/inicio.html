@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="text-center py-20 body_inicio">
+    <h1 class="text-4xl font-bold text-blue-700 mb-6">Bienvenido al Sistema Escolar</h1>
+    <p class="text-lg mb-6">Gestión académica para Coordinadores, Docentes, Estudiantes y Acudientes</p>
+    <a href="{% url 'login' %}" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">Iniciar Sesión</a>
+  </div>
+{% endblock %}

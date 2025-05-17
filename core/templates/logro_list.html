@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Lista de Logros</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Descripción del Logro</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for logro in logros %}
+        <tr>
+          <td>{{ logro.descripcion }}</td>
+          <td>
+            <a href="{% url 'editar_logro' logro.id %}">Editar</a> |
+            <a href="{% url 'eliminar_logro' logro.id %}">Eliminar</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

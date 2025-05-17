@@ -1,0 +1,63 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django-specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.sqlite3-journal
+
+# Django static files and media files
+staticfiles/
+media/
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# .env configuration files (for environment variables)
+.env
+
+# IDE and editor-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Miscellaneous files
+*.log
+*.pot
+
+# Pytest cache
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Django migrations
+*/migrations/
+
+# Tailwind CSS build files
+tailwind/node_modules/
+
+# Python packages
+*.egg
+*.egg-info
+dist/
+build/

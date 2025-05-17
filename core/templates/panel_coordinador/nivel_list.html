@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="text-xl font-bold mb-4">Niveles Educativos</h1>
+  <a href="{% url 'crear_nivel' %}" class="bg-blue-500 text-white py-1 px-3 rounded mb-3">Nuevo Nivel</a>
+  
+  <table class="mt-4 w-full border">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="py-2 px-4">Nombre</th>
+        <th class="py-2 px-4">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for nivel in niveles %}
+        <tr class="border-t">
+          <td class="py-2 px-4">{{ nivel.nombre }}</td>
+          <td class="py-2 px-4">
+            <a href="{% url 'editar_nivel' nivel.id %}" class="text-blue-600">Editar</a> |
+            <a href="{% url 'eliminar_nivel' nivel.id %}" class="text-red-600" onclick="return confirm('¿Estás seguro de eliminar este nivel?');">Eliminar</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

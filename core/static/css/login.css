@@ -1,0 +1,100 @@
+/* Reset básico y fuente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Fondo con imagen y degradado */
+.form-container {
+  height: 100vh;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url('../img/registro_login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem;
+}
+
+/* Caja translúcida para el formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.form:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.89);
+}
+
+/* Estilos para campos */
+.text-form p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.text-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+/* Input y Select iguales */
+.text-form input,
+.text-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+/* Opciones del desplegable */
+option {
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: black;
+}
+
+/* Botón de envío */
+.btn {
+  background-color: #0d6efd;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2c3e50;
+}
+
+/* Footer (opcional) */
+footer {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}

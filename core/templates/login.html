@@ -1,0 +1,50 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Tailwind CSS -->
+  <link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
+  
+  <!-- Estilos personalizados -->
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
+
+  <!-- Fuente Nunito opcional (si usas desde Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:opsz,wght@6..12,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="form-container">
+
+    <form method="post" class="form">
+      <h2 class="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
+      {% csrf_token %}
+
+      {% if error %}
+        <div class="mb-4 p-3 bg-red-100 text-red-700 rounded border border-red-300">
+          {{ error }}
+        </div>
+      {% endif %}
+
+      <div class="text-form">
+        <p>
+          <label for="id_correo">Correo electrónico:</label>
+          {{ form.correo|add_class:"w-full p-2 border border-gray-300 rounded" }}
+        </p>
+
+        <p>
+          <label for="id_password">Contraseña:</label>
+          {{ form.password|add_class:"w-full p-2 border border-gray-300 rounded" }}
+        </p>
+      </div>
+
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+
+  </div>
+</body>
+</html>
